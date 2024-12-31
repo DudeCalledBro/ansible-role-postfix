@@ -1,0 +1,21 @@
+- name: Install postfix
+  ansible.builtin.package:
+    name: postfix
+    state: present
+
+- name: Update postfix configuration
+  ansible.builtin.lineinfile:
+    dest: "{{ postfix_config_file }}"
+    line: "{{ item.key }} = {{ item.value }}"
+    regexp: "^{{ item.key }} ="
+    mode: 0644
+  loop: "{{ postfix_config | dict2items }}"
+  loop_control:
+    label: "{{ item.key }} = {{ item.value }}"
+  notify: restart postfix
+
+- name: Ensure postfix service state
+  ansible.builtin.service:
+    name: postfix
+    state: "{{ postfix_service_state }}"
+    enabled: "{{ postfix_service_enabled }}"

@@ -1,0 +1,22 @@
+argument_specs:
+  main:
+    short_description: postfix
+    description: "Setup Postfix."
+    author: dudecalledbro
+    options:
+      postfix_config_file:
+        type: str
+        required: true
+        description: "The main configuration file for Postfix."
+      postfix_service_state:
+        type: str
+        required: true
+        description: "Control the operational state of the Postfix service."
+      postfix_service_enabled:
+        type: bool
+        required: true
+        description: "Control the operational state of the Postfix service."
+      postfix_config:
+        type: dict
+        required: true
+        description: "A dictionary of key Postfix configuration parameters."

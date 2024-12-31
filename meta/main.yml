@@ -1,0 +1,17 @@
+dependencies: []
+
+galaxy_info:
+  role_name: postfix
+  author: dudecalledbro
+  description: Setup Postfix.
+  license: "license (MIT)"
+  min_ansible_version: "2.15"
+  platforms:
+  - name: Debian
+    versions:
+    - all
+
+  galaxy_tags:
+  - email
+  - postfix
+  - system

@@ -1,0 +1,14 @@
+# The main configuration file for Postfix.
+# This file contains the core settings that define Postfix's behavior.
+postfix_config_file: /etc/postfix/main.cf
+
+# Control the operational state of the Postfix service.
+# 'started' ensures the service is running.
+# 'true' makes sure Postfix starts automatically on system boot.
+postfix_service_state: started
+postfix_service_enabled: true
+
+# A dictionary of key Postfix configuration parameters.
+postfix_config:
+  inet_interfaces: "loopback-only"
+  inet_protocols: all
